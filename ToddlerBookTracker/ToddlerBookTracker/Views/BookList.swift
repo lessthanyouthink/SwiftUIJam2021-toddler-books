@@ -17,6 +17,8 @@ struct BookList: View {
     )
     private var books: FetchedResults<Book>
 
+    @State private var showingAddSheet = false
+
     var body: some View {
         List {
             ForEach(books) { book in
@@ -39,27 +41,20 @@ struct BookList: View {
                 }
             }
         }
+        .navigationTitle("Books")
         .toolbar {
             ToolbarItemGroup {
-                Button(action: addItem) {
-                    Label("Add Book", systemImage: "plus.rectangle.portrait")
+                Button(action: {
+                    showingAddSheet = true
+                }) {
+                    Label("Add Book", systemImage: "plus.square.fill")
                 }
             }
         }
-    }
-
-    private func addItem() {
-        withAnimation {
-            let newItem = Book(context: viewContext)
-            newItem.lastRead = Date()
-
-            do {
-                try viewContext.save()
-            } catch {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                let nsError = error as NSError
-                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+        .sheet(isPresented: $showingAddSheet) {
+            NavigationView {
+                AddBookView(isPresented: $showingAddSheet)
+                    .environment(\.managedObjectContext, viewContext)
             }
         }
     }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8D52CF7425E0BF690025ABF0 /* AddBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D52CF7325E0BF690025ABF0 /* AddBookView.swift */; };
 		8DD1950A25E0335C00D7B7E1 /* ToddlerBookTrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD1950925E0335C00D7B7E1 /* ToddlerBookTrackerApp.swift */; };
 		8DD1950C25E0335C00D7B7E1 /* BookList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD1950B25E0335C00D7B7E1 /* BookList.swift */; };
 		8DD1950E25E0335D00D7B7E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8DD1950D25E0335D00D7B7E1 /* Assets.xcassets */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8D52CF7325E0BF690025ABF0 /* AddBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBookView.swift; sourceTree = "<group>"; };
 		8DD1950625E0335C00D7B7E1 /* ToddlerBookTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToddlerBookTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DD1950925E0335C00D7B7E1 /* ToddlerBookTrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToddlerBookTrackerApp.swift; sourceTree = "<group>"; };
 		8DD1950B25E0335C00D7B7E1 /* BookList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookList.swift; sourceTree = "<group>"; };
@@ -37,6 +39,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8D52CF7225E0BF4C0025ABF0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8DD1950B25E0335C00D7B7E1 /* BookList.swift */,
+				8D52CF7325E0BF690025ABF0 /* AddBookView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		8DD194FD25E0335C00D7B7E1 = {
 			isa = PBXGroup;
 			children = (
@@ -56,10 +67,10 @@
 		8DD1950825E0335C00D7B7E1 /* ToddlerBookTracker */ = {
 			isa = PBXGroup;
 			children = (
+				8D52CF7225E0BF4C0025ABF0 /* Views */,
 				8DD1950925E0335C00D7B7E1 /* ToddlerBookTrackerApp.swift */,
-				8DD1950B25E0335C00D7B7E1 /* BookList.swift */,
-				8DD1950D25E0335D00D7B7E1 /* Assets.xcassets */,
 				8DD1951225E0335D00D7B7E1 /* Persistence.swift */,
+				8DD1950D25E0335D00D7B7E1 /* Assets.xcassets */,
 				8DD1951725E0335D00D7B7E1 /* Info.plist */,
 				8DD1951425E0335D00D7B7E1 /* ToddlerBookTracker.xcdatamodeld */,
 				8DD1950F25E0335D00D7B7E1 /* Preview Content */,
@@ -148,6 +159,7 @@
 				8DD1951325E0335D00D7B7E1 /* Persistence.swift in Sources */,
 				8DD1950C25E0335C00D7B7E1 /* BookList.swift in Sources */,
 				8DD1950A25E0335C00D7B7E1 /* ToddlerBookTrackerApp.swift in Sources */,
+				8D52CF7425E0BF690025ABF0 /* AddBookView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
