@@ -23,9 +23,10 @@ struct BookList: View {
         List {
             ForEach(books) { book in
                 HStack {
-                    Image(systemName: "rectangle.portrait")
-                        .font(.largeTitle)
+                    BookCover(cover: book.coverImage)
+                        .shadow(radius: 3)
                         .frame(width: 60, height: 60, alignment: .center)
+                        .padding([.leading, .trailing], 8)
                     VStack(alignment: .leading) {
                         Text(book.title ?? "Untitled")
                             .font(.headline)
@@ -57,7 +58,7 @@ struct BookList: View {
                     .buttonStyle(PlainButtonStyle())
                     .foregroundColor(.accentColor)
                 }
-                .padding([.trailing, .top, .bottom])
+                .padding([.vertical, .trailing])
             }
         }
         .navigationTitle("Books")
@@ -90,6 +91,25 @@ struct BookList_Previews: PreviewProvider {
         NavigationView {
             BookList()
                 .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+        }
+    }
+}
+
+// MARK: -
+
+struct BookCover: View {
+    let cover: UIImage?
+
+    var body: some View {
+        if let cover = cover {
+            Image(uiImage: cover)
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+        }
+        else {
+            Image(systemName: "text.book.closed")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
         }
     }
 }

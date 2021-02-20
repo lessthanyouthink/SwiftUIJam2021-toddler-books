@@ -13,9 +13,29 @@ struct AddBookView: View {
 
     @State var title: String = ""
     @State var author: String = ""
+    @State var cover: UIImage?
+
+    @State var pickingImage = false
 
     var body: some View {
         Form {
+            Section {
+                HStack {
+                    Spacer()
+                    VStack(spacing: 8) {
+                        Button(action: {
+                            pickingImage = true
+                        }) {
+                            SelectedCover(cover: cover)
+                                .padding(2)
+                        }
+                        Text("Cover Image")
+                            .foregroundColor(Color(UIColor.placeholderText))
+                    }
+                    Spacer()
+                }
+                .padding()
+            }
             Section {
                 TextField("Title", text: $title)
                 TextField("Author(s)", text: $author)
@@ -42,6 +62,9 @@ struct AddBookView: View {
                 Image(systemName: "xmark.circle")
             })
         )
+        .sheet(isPresented: $pickingImage) {
+            ImagePicker(image: $cover, isPresented: $pickingImage)
+        }
     }
 
     var formComplete: Bool {
@@ -55,6 +78,7 @@ struct AddBookView: View {
             if author.isEmpty == false {
                 book.author = author
             }
+            book.coverImage = cover
 
             do {
                 try viewContext.save()
@@ -74,6 +98,26 @@ struct AddBookView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
             AddBookView(isPresented: Binding.constant(true))
+        }
+    }
+}
+
+// MARK: -
+
+struct SelectedCover: View {
+    var cover: UIImage?
+
+    var body: some View {
+        if let cover = cover {
+            Image(uiImage: cover)
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(maxHeight: 120, alignment: .center)
+                .shadow(radius: 3)
+        }
+        else {
+            Image(systemName: "photo.on.rectangle.angled")
+                .font(.title2)
         }
     }
 }
