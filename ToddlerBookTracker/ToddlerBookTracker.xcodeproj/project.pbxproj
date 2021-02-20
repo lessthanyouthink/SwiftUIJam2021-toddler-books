@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8DD1950A25E0335C00D7B7E1 /* ToddlerBookTrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD1950925E0335C00D7B7E1 /* ToddlerBookTrackerApp.swift */; };
-		8DD1950C25E0335C00D7B7E1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD1950B25E0335C00D7B7E1 /* ContentView.swift */; };
+		8DD1950C25E0335C00D7B7E1 /* BookList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD1950B25E0335C00D7B7E1 /* BookList.swift */; };
 		8DD1950E25E0335D00D7B7E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8DD1950D25E0335D00D7B7E1 /* Assets.xcassets */; };
 		8DD1951125E0335D00D7B7E1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8DD1951025E0335D00D7B7E1 /* Preview Assets.xcassets */; };
 		8DD1951325E0335D00D7B7E1 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD1951225E0335D00D7B7E1 /* Persistence.swift */; };
@@ -18,7 +18,7 @@
 /* Begin PBXFileReference section */
 		8DD1950625E0335C00D7B7E1 /* ToddlerBookTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToddlerBookTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DD1950925E0335C00D7B7E1 /* ToddlerBookTrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToddlerBookTrackerApp.swift; sourceTree = "<group>"; };
-		8DD1950B25E0335C00D7B7E1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		8DD1950B25E0335C00D7B7E1 /* BookList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookList.swift; sourceTree = "<group>"; };
 		8DD1950D25E0335D00D7B7E1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8DD1951025E0335D00D7B7E1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		8DD1951225E0335D00D7B7E1 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
@@ -57,7 +57,7 @@
 			isa = PBXGroup;
 			children = (
 				8DD1950925E0335C00D7B7E1 /* ToddlerBookTrackerApp.swift */,
-				8DD1950B25E0335C00D7B7E1 /* ContentView.swift */,
+				8DD1950B25E0335C00D7B7E1 /* BookList.swift */,
 				8DD1950D25E0335D00D7B7E1 /* Assets.xcassets */,
 				8DD1951225E0335D00D7B7E1 /* Persistence.swift */,
 				8DD1951725E0335D00D7B7E1 /* Info.plist */,
@@ -146,7 +146,7 @@
 			files = (
 				8DD1951625E0335D00D7B7E1 /* ToddlerBookTracker.xcdatamodeld in Sources */,
 				8DD1951325E0335D00D7B7E1 /* Persistence.swift in Sources */,
-				8DD1950C25E0335C00D7B7E1 /* ContentView.swift in Sources */,
+				8DD1950C25E0335C00D7B7E1 /* BookList.swift in Sources */,
 				8DD1950A25E0335C00D7B7E1 /* ToddlerBookTrackerApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -14,7 +14,7 @@ struct ToddlerBookTrackerApp: App {
     var body: some Scene {
         WindowGroup {
             NavigationView {
-                ContentView()
+                BookList()
                     .environment(\.managedObjectContext, persistenceController.container.viewContext)
             }
         }
