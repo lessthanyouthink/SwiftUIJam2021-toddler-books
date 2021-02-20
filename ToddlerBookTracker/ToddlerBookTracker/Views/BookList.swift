@@ -23,9 +23,9 @@ struct BookList: View {
         List {
             ForEach(books) { book in
                 HStack {
-                    Image(systemName: "book.closed.fill")
+                    Image(systemName: "rectangle.portrait")
                         .font(.largeTitle)
-                        .frame(width: 80, height: 80, alignment: .center)
+                        .frame(width: 60, height: 60, alignment: .center)
                     VStack(alignment: .leading) {
                         Text(book.title ?? "Untitled")
                             .font(.headline)
@@ -38,7 +38,26 @@ struct BookList: View {
                                 .font(.caption)
                         }
                     }
+                    Spacer()
+                    Button(action: {
+                        withAnimation {
+                            book.logReading(withContext: viewContext)
+                        }
+                    }, label: {
+                        Image(systemName: "text.badge.checkmark")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .padding(8)
+                    })
+                    .frame(maxWidth: 32, maxHeight: 32, alignment: .center)
+                    .overlay(
+                        Circle()
+                            .stroke(lineWidth: 2)
+                    )
+                    .buttonStyle(PlainButtonStyle())
+                    .foregroundColor(.accentColor)
                 }
+                .padding([.trailing, .top, .bottom])
             }
         }
         .navigationTitle("Books")
