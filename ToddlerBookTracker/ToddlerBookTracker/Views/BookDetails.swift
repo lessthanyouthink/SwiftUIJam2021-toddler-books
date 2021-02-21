@@ -13,28 +13,33 @@ struct BookDetails: View {
 
     var body: some View {
         ScrollView {
-            VStack {
+            HStack(spacing: 16) {
                 BookCover(cover: book.coverImage)
-                    .frame(maxHeight: 200)
-                Text(book.title!)
-                    .font(.title)
-                if let author = book.author {
-                    Text("By \(author)")
+                    .frame(maxHeight: 160)
+                VStack(spacing: 4) {
+                    Text(book.title!)
+                        .font(.title2)
+                        .multilineTextAlignment(.center)
+                    if let author = book.author {
+                        Text("By \(author)")
+                            .font(.subheadline)
+                    }
                 }
             }
             .frame(maxWidth: .infinity, alignment: .center)
+            .padding()
+            Text("Cool")
         }
     }
 }
 
 struct BookDetails_Previews: PreviewProvider {
-    static let book: Book = {
-        let book = Book(context: PersistenceController.preview.container.viewContext)
-        book.title = "This Is The Book"
-        book.author = "S. Person"
-        return book
+    static let book: Book? = {
+        let request = NSFetchRequest<Book>(entityName: "Book")
+        let books = try? PersistenceController.preview.container.viewContext.fetch(request)
+        return books?.first
     }()
     static var previews: some View {
-        BookDetails(book: book)
+        BookDetails(book: book!)
     }
 }

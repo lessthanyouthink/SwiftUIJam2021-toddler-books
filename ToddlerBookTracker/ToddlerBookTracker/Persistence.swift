@@ -16,8 +16,9 @@ struct PersistenceController {
         for _ in 0..<10 {
             let newItem = Book(context: viewContext)
             newItem.title = ["Little Blue Truck", "Goodnight Moon", "Anne’s Alphabet", "Love You Forever"].randomElement()
-            newItem.author = Bool.random() ? "Notareal Person" : nil
-            newItem.dateLastRead = Date(timeIntervalSinceNow: TimeInterval.random(in: -10000...0))
+            let authors: [String?] = ["Notareal Person", "J. Smith", "Nom de Plume", nil]
+            newItem.author = authors.randomElement() ?? nil
+            newItem.dateLastRead = Date(timeIntervalSinceNow: TimeInterval.random(in: -10000...0))            
         }
         do {
             try viewContext.save()
