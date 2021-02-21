@@ -12,7 +12,7 @@ struct BookList: View {
     @Environment(\.managedObjectContext) private var viewContext
 
     @FetchRequest(
-        sortDescriptors: [NSSortDescriptor(keyPath: \Book.lastRead, ascending: false)],
+        sortDescriptors: [NSSortDescriptor(keyPath: \Book.sortDate, ascending: false)],
         animation: .default
     )
     private var books: FetchedResults<Book>
@@ -34,8 +34,8 @@ struct BookList: View {
                             Text("by \(author)")
                                 .font(.callout)
                         }
-                        if let lastRead = book.lastRead {
-                            Text("Last read: \(lastRead, formatter: dateFormatter)")
+                        if let dateLastRead = book.dateLastRead {
+                            Text("Last read: \(dateLastRead, formatter: dateFormatter)")
                                 .font(.caption)
                         }
                     }

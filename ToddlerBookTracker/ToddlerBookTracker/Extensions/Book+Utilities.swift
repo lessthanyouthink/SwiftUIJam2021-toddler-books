@@ -28,8 +28,9 @@ extension Book {
         reading.book = self
         reading.date = date
 
-        if date > (lastRead ?? Date.distantPast) {
-            lastRead = date
+        if date > (dateLastRead ?? Date.distantPast) {
+            dateLastRead = date
+            sortDate = date
         }
 
         timesRead += 1

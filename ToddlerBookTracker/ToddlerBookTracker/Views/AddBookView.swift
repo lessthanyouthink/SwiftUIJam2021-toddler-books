@@ -74,6 +74,8 @@ struct AddBookView: View {
     func addBook() {
         withAnimation {
             let book = Book(context: viewContext)
+            book.dateAdded = Date()
+            book.sortDate = book.dateAdded
             book.title = title
             if author.isEmpty == false {
                 book.author = author

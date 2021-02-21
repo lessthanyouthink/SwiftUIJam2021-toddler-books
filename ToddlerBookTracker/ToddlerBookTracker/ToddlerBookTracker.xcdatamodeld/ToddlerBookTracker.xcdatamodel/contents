@@ -3,8 +3,10 @@
     <entity name="Book" representedClassName="Book" syncable="YES" codeGenerationType="class">
         <attribute name="author" optional="YES" attributeType="String"/>
         <attribute name="coverData" optional="YES" attributeType="Binary" valueTransformerName="NSSecureUnarchiveFromData"/>
+        <attribute name="dateAdded" attributeType="Date" defaultDateTimeInterval="635446800" usesScalarValueType="NO"/>
+        <attribute name="dateLastRead" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="isbn" optional="YES" attributeType="String"/>
-        <attribute name="lastRead" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="sortDate" attributeType="Date" defaultDateTimeInterval="635446800" usesScalarValueType="NO"/>
         <attribute name="timesRead" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="title" attributeType="String" defaultValueString=""/>
         <relationship name="readings" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Reading" inverseName="book" inverseEntity="Reading"/>
@@ -14,7 +16,7 @@
         <relationship name="book" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Book" inverseName="readings" inverseEntity="Book"/>
     </entity>
     <elements>
-        <element name="Book" positionX="-63" positionY="-18" width="128" height="134"/>
+        <element name="Book" positionX="-63" positionY="-18" width="128" height="164"/>
         <element name="Reading" positionX="-63" positionY="27" width="128" height="59"/>
     </elements>
 </model>
