@@ -26,6 +26,10 @@ struct BookDetails: View {
                         Text("By \(author)")
                             .font(.subheadline)
                     }
+                    if let dateLastRead = book.dateLastRead {
+                        Text("Last read: \(dateLastRead, formatter: dateFormatter)")
+                            .font(.caption)
+                    }
                     Button(action: {
                         withAnimation {
                             book.logReading()
@@ -73,3 +77,9 @@ struct BookDetails_Previews: PreviewProvider {
         BookDetails(book: book!)
     }
 }
+
+private let dateFormatter: RelativeDateTimeFormatter = {
+    let formatter = RelativeDateTimeFormatter()
+    formatter.dateTimeStyle = .named
+    return formatter
+}()
