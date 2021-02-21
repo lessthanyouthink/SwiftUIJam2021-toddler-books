@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		8D04149425E2B8D500338DFD /* BookDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D04149325E2B8D500338DFD /* BookDetails.swift */; };
 		8D04149725E2BCE400338DFD /* BookListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D04149625E2BCE400338DFD /* BookListCell.swift */; };
+		8D04149B25E2DE1B00338DFD /* CapsuleButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D04149A25E2DE1B00338DFD /* CapsuleButtonStyle.swift */; };
 		8D52CF7425E0BF690025ABF0 /* AddBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D52CF7325E0BF690025ABF0 /* AddBookView.swift */; };
 		8DB1C63B25E19E3300054532 /* Book+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB1C63A25E19E3300054532 /* Book+Utilities.swift */; };
 		8DB1C64125E1A10700054532 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB1C64025E1A10700054532 /* ImagePicker.swift */; };
@@ -23,6 +24,7 @@
 /* Begin PBXFileReference section */
 		8D04149325E2B8D500338DFD /* BookDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetails.swift; sourceTree = "<group>"; };
 		8D04149625E2BCE400338DFD /* BookListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookListCell.swift; sourceTree = "<group>"; };
+		8D04149A25E2DE1B00338DFD /* CapsuleButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapsuleButtonStyle.swift; sourceTree = "<group>"; };
 		8D52CF7325E0BF690025ABF0 /* AddBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBookView.swift; sourceTree = "<group>"; };
 		8DB1C63A25E19E3300054532 /* Book+Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Book+Utilities.swift"; sourceTree = "<group>"; };
 		8DB1C64025E1A10700054532 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
@@ -47,6 +49,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8D04149925E2DE0500338DFD /* Styles */ = {
+			isa = PBXGroup;
+			children = (
+				8D04149A25E2DE1B00338DFD /* CapsuleButtonStyle.swift */,
+			);
+			path = Styles;
+			sourceTree = "<group>";
+		};
 		8D52CF7225E0BF4C0025ABF0 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -94,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				8DB1C63925E19E1D00054532 /* Extensions */,
+				8D04149925E2DE0500338DFD /* Styles */,
 				8D52CF7225E0BF4C0025ABF0 /* Views */,
 				8DB1C63F25E1A0ED00054532 /* UIKit Wrappers */,
 				8DD1950925E0335C00D7B7E1 /* ToddlerBookTrackerApp.swift */,
@@ -183,6 +194,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8D04149B25E2DE1B00338DFD /* CapsuleButtonStyle.swift in Sources */,
 				8DD1951625E0335D00D7B7E1 /* ToddlerBookTracker.xcdatamodeld in Sources */,
 				8DB1C63B25E19E3300054532 /* Book+Utilities.swift in Sources */,
 				8DD1951325E0335D00D7B7E1 /* Persistence.swift in Sources */,

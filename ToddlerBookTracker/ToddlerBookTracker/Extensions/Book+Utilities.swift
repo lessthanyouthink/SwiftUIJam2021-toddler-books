@@ -23,7 +23,11 @@ extension Book {
         }
     }
 
-    func logReading(forDate date: Date = Date(), withContext context: NSManagedObjectContext) {
+    func logReading(forDate date: Date = Date()) {
+        guard let context = managedObjectContext else {
+            return
+        }
+
         let reading = Reading(context: context)
         reading.book = self
         reading.date = date

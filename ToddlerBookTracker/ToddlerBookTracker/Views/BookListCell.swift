@@ -32,7 +32,7 @@ struct BookListCell: View {
             Spacer()
             Button(action: {
                 withAnimation {
-                    book.logReading(withContext: viewContext)
+                    book.logReading()
                 }
             }, label: {
                 Image(systemName: "text.badge.checkmark")
@@ -40,13 +40,8 @@ struct BookListCell: View {
                     .aspectRatio(contentMode: .fit)
                     .padding(8)
             })
-            .frame(maxWidth: 32, maxHeight: 32, alignment: .center)
-            .overlay(
-                Circle()
-                    .stroke(lineWidth: 2)
-            )
-            .buttonStyle(PlainButtonStyle())
-            .foregroundColor(.accentColor)
+            .frame(maxWidth: 32, maxHeight: 32, alignment: .center)            
+            .buttonStyle(CapsuleButtonStyle())            
         }
     }
 }
