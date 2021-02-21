@@ -24,7 +24,6 @@ struct BookList: View {
             ForEach(books) { book in
                 HStack {
                     BookCover(cover: book.coverImage)
-                        .shadow(radius: 3)
                         .frame(width: 60, height: 60, alignment: .center)
                         .padding([.leading, .trailing], 8)
                     VStack(alignment: .leading) {
@@ -61,7 +60,7 @@ struct BookList: View {
                 .padding([.vertical, .trailing])
             }
         }
-        .navigationTitle("Books")
+        .navigationTitle("Our Books")
         .toolbar {
             ToolbarItemGroup {
                 Button(action: {
@@ -105,11 +104,13 @@ struct BookCover: View {
             Image(uiImage: cover)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
+                .shadow(radius: 3)                
         }
         else {
             Image(systemName: "text.book.closed")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
+                .padding(6)
         }
     }
 }
