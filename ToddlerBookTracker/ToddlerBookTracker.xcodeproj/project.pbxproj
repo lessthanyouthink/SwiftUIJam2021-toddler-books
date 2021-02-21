@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8D04149425E2B8D500338DFD /* BookDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D04149325E2B8D500338DFD /* BookDetails.swift */; };
+		8D04149725E2BCE400338DFD /* BookListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D04149625E2BCE400338DFD /* BookListCell.swift */; };
 		8D52CF7425E0BF690025ABF0 /* AddBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D52CF7325E0BF690025ABF0 /* AddBookView.swift */; };
 		8DB1C63B25E19E3300054532 /* Book+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB1C63A25E19E3300054532 /* Book+Utilities.swift */; };
 		8DB1C64125E1A10700054532 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB1C64025E1A10700054532 /* ImagePicker.swift */; };
@@ -19,6 +21,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8D04149325E2B8D500338DFD /* BookDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetails.swift; sourceTree = "<group>"; };
+		8D04149625E2BCE400338DFD /* BookListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookListCell.swift; sourceTree = "<group>"; };
 		8D52CF7325E0BF690025ABF0 /* AddBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBookView.swift; sourceTree = "<group>"; };
 		8DB1C63A25E19E3300054532 /* Book+Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Book+Utilities.swift"; sourceTree = "<group>"; };
 		8DB1C64025E1A10700054532 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
@@ -47,6 +51,8 @@
 			isa = PBXGroup;
 			children = (
 				8DD1950B25E0335C00D7B7E1 /* BookList.swift */,
+				8D04149625E2BCE400338DFD /* BookListCell.swift */,
+				8D04149325E2B8D500338DFD /* BookDetails.swift */,
 				8D52CF7325E0BF690025ABF0 /* AddBookView.swift */,
 			);
 			path = Views;
@@ -182,6 +188,8 @@
 				8DD1951325E0335D00D7B7E1 /* Persistence.swift in Sources */,
 				8DB1C64125E1A10700054532 /* ImagePicker.swift in Sources */,
 				8DD1950C25E0335C00D7B7E1 /* BookList.swift in Sources */,
+				8D04149425E2B8D500338DFD /* BookDetails.swift in Sources */,
+				8D04149725E2BCE400338DFD /* BookListCell.swift in Sources */,
 				8DD1950A25E0335C00D7B7E1 /* ToddlerBookTrackerApp.swift in Sources */,
 				8D52CF7425E0BF690025ABF0 /* AddBookView.swift in Sources */,
 			);

@@ -22,42 +22,10 @@ struct BookList: View {
     var body: some View {
         List {
             ForEach(books) { book in
-                HStack {
-                    BookCover(cover: book.coverImage)
-                        .frame(width: 60, height: 60, alignment: .center)
-                        .padding([.leading, .trailing], 8)
-                    VStack(alignment: .leading) {
-                        Text(book.title ?? "Untitled")
-                            .font(.headline)
-                        if let author = book.author {
-                            Text("by \(author)")
-                                .font(.callout)
-                        }
-                        if let dateLastRead = book.dateLastRead {
-                            Text("Last read: \(dateLastRead, formatter: dateFormatter)")
-                                .font(.caption)
-                        }
-                    }
-                    Spacer()
-                    Button(action: {
-                        withAnimation {
-                            book.logReading(withContext: viewContext)
-                        }
-                    }, label: {
-                        Image(systemName: "text.badge.checkmark")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .padding(8)
-                    })
-                    .frame(maxWidth: 32, maxHeight: 32, alignment: .center)
-                    .overlay(
-                        Circle()
-                            .stroke(lineWidth: 2)
-                    )
-                    .buttonStyle(PlainButtonStyle())
-                    .foregroundColor(.accentColor)
+                NavigationLink(destination: BookDetails(book: book)) {
+                    BookListCell(book: book)
+                        .padding([.vertical, .trailing])
                 }
-                .padding([.vertical, .trailing])
             }
         }
         .navigationTitle("Our Books")
@@ -79,12 +47,6 @@ struct BookList: View {
     }
 }
 
-private let dateFormatter: RelativeDateTimeFormatter = {
-    let formatter = RelativeDateTimeFormatter()
-    formatter.dateTimeStyle = .named    
-    return formatter
-}()
-
 struct BookList_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
@@ -103,8 +65,7 @@ struct BookCover: View {
         if let cover = cover {
             Image(uiImage: cover)
                 .resizable()
-                .aspectRatio(contentMode: .fit)
-                .shadow(radius: 3)                
+                .aspectRatio(contentMode: .fit)                   
         }
         else {
             Image(systemName: "text.book.closed")
